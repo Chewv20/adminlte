@@ -4,7 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventsController;
 use App\Models\Event;
-
+use App\Http\Controllers\GamesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,18 +47,12 @@ Route::middleware('auth')->group(function () {
     
     
     Route::get('/events/create', [EventsController::class,'create']);
-    
-    Route::get('/games',function(){ 
-        return "Bienvenido a la web que listara los objetos comprados";
-    });
-    
-    Route::get('/games/create',function(){
-        return "Pagina que creara el formulario para dar de alta juegos";
-    });
 
-    Route::get('/games/{name_game}/{categoria}',function($game_name,$category_game){ 
-        return "Bienvenido a la pagina del juego: ".$game_name." pertenece a la categoria ".$category_game;
-    });
+    
+
+    Route::get('/games',[GamesController::class,'index']);
+    Route::get('/games/create',[GamesController::class,'create']);
+    Route::get('/games/{name_game}/{categoria?}', [GamesController::class,'help']);
 
 
 });
