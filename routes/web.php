@@ -48,6 +48,19 @@ Route::middleware('auth')->group(function () {
     
     Route::get('/events/create', [EventsController::class,'create']);
     
+    Route::get('/games',function(){ 
+        return "Bienvenido a la web que listara los objetos comprados";
+    });
+    
+    Route::get('/games/create',function(){
+        return "Pagina que creara el formulario para dar de alta juegos";
+    });
+
+    Route::get('/games/{name_game}/{categoria}',function($game_name,$category_game){ 
+        return "Bienvenido a la pagina del juego: ".$game_name." pertenece a la categoria ".$category_game;
+    });
+
+
 });
 
 require __DIR__.'/auth.php';
