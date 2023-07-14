@@ -320,9 +320,22 @@ return [
         ],
         ['header' => 'account_settings'],
         [
-            'text' => 'profile',
-            'url'  => '/games/FIFA24',
-            'icon' => 'fas fa-fw fa-user',
+            'text' => 'Juegos',
+            'icon' => 'fa fa-gamepad',
+            'submenu' => [
+                [
+                    'text' => 'Mostrar juegos',
+                    'url'  => '/games'
+                ],
+                [
+                    'text' => 'Crear Juegos',
+                    'url'  => '/games/create'
+                ],
+                [
+                    'text' => 'Mostrar juego',
+                    'url'  => '/games/Fifa24/deportes'
+                ],
+        ],
         ],
         [
             'text' => 'Eventos',
