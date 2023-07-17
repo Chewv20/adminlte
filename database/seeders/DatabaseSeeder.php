@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Videogame;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -22,5 +24,11 @@ class DatabaseSeeder extends Seeder
         $this ->call([
             CategorieTableSeeder::class
         ]);
+
+        $this ->call([
+            UsersTableSeeder::class
+        ]);
+
+        Videogame::factory(100)->create();
     }
 }
