@@ -13,11 +13,11 @@
     @csrf
 
     <div class="row">
-        <x-adminlte-input name="name_game" label="Nombre" placeholder="Nombre del juego" fgroup-class="col-md-6"/>
+        <x-adminlte-input name="name" label="Nombre" placeholder="Nombre del juego" fgroup-class="col-md-6" required/>
     </div> 
 
     <div class="row">
-        <x-adminlte-select2 name="categoria_id" label="Categoria" data-placeholder="Seleccione" fgroup-class="col-md-6">
+        <x-adminlte-select2 name="category_id" label="Categoria" data-placeholder="Seleccione" fgroup-class="col-md-6">
             <x-slot name="prependSlot">
             </x-slot>
             @foreach ($categorias as $item)

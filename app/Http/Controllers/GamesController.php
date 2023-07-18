@@ -44,10 +44,12 @@ class GamesController extends Controller
     }
 
     public function store(Request $request){
-        $game = new Videogame;
-        $game -> name = $request ->name_game;
-        $game -> category_id = $request ->categoria_id;
-        $game -> save();
+        // $game = new Videogame;
+        // $game -> name = $request ->name_game;
+        // $game -> category_id = $request ->categoria_id;
+        // $game -> save();
+
+        Videogame::create($request->all());
 
         return redirect()-> route('games');
     }
