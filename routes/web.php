@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventsController;
 use App\Models\Event;
 use App\Http\Controllers\GamesController;
+use App\Models\Category;
+use App\Http\Controllers\CategoryController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -56,6 +59,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/games/view/{id_game}',[GamesController::class,'view'])->name('viewGame');
     Route::post('/games/updategame',[GamesController::class,'update'])->name('updateVideogame');
     Route::get('/games/delete/{id_game}',[GamesController::class,'delete'])->name('deleteGame');
+
+    Route::resource('categories',CategoryController::class);
+
 });
 
 require __DIR__.'/auth.php';
