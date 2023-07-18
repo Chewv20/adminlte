@@ -7,13 +7,26 @@
 @stop
 
 @section('content')
-    <div class="row">
-        <div class="col-12">
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
             <div class="card">
+                <div class="card-header">Dashboard</div>
+
                 <div class="card-body">
-                    <p class="mb-0">You are logged in!</p>
+
+                    <h1>{{ $chart->options['chart_title'] }}</h1>
+                    {!! $chart->renderHtml() !!}
+
                 </div>
+
             </div>
         </div>
     </div>
-@stop
+</div>
+@endsection
+
+@section('scripts')
+{!! $chart->renderChartJsLibrary() !!}
+{!! $chart->renderJs() !!}
+@endsection

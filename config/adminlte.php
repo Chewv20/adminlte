@@ -357,6 +357,11 @@ return [
             'icon' => 'fas fa-fw fa-lock',
         ],
         [
+            'text' => 'Graficas',
+            'url'  => '/grafica',
+            'icon' => 'fa fa-chart-pie',
+        ],
+        [
             'text'    => 'multilevel',
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
@@ -510,6 +515,12 @@ return [
                     'asset' => true,
                     'location' => 'vendor/datatables-plugins/buttons/css/buttons.bootstrap4.min.css',
                 ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/datatables-plugins/buttons/js/buttons.colVis.min.js',
+                ],
+                
             ],
         ],
         'Select2' => [

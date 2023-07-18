@@ -62,6 +62,10 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('categories',CategoryController::class);
 
+    Route::get('/grafica',function(){
+        return view('grafica');
+    });
+
 });
 
 require __DIR__.'/auth.php';

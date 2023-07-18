@@ -1,3 +1,5 @@
+
+
 @extends('adminlte::page')
 
 @section('title', 'Dashboard')
@@ -9,9 +11,15 @@
 
 @section('content')
 
+@php
+$config['language']= "es";
+@endphp
+
+
+
 <div class="card">
     <div class="card-body">
-        <x-adminlte-datatable id="table1" :heads="$heads" striped head-theme='dark' with-buttons with-footer>
+        <x-adminlte-datatable id="table1" :config="$config" :heads="$heads" head-theme='dark' with-buttons scrollable hoverable with-footer beautify bordered footer-theme='dark'>
             @forelse ($videogame as $item)
                 <tr>
                         <th>{{ $item -> id }}</th>
@@ -30,5 +38,15 @@
         </x-adminlte-datatable>
     </div>
 </div>
+
+{{-- @section('js')
+<script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script>
+        $('#table1').DataTable({
+			language: {
+            url: 'https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json',
+        }
+		});
+    </script> --}}
 
 @stop
