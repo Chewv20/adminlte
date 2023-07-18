@@ -50,11 +50,12 @@ Route::middleware('auth')->group(function () {
 
     
 
-    Route::get('/games',[GamesController::class,'index']);
+    Route::get('/games',[GamesController::class,'index'])->name('games');
     Route::get('/games/create',[GamesController::class,'create']);
-    Route::get('/games/{name_game}/{categoria?}', [GamesController::class,'help']);
-
-
+    Route::post('/games/storegame',[GamesController::class,'store'])->name('createVideogame');
+    Route::get('/games/view/{id_game}',[GamesController::class,'view'])->name('viewGame');
+    Route::post('/games/updategame',[GamesController::class,'update'])->name('updateVideogame');
+    Route::get('/games/delete/{id_game}',[GamesController::class,'delete'])->name('deleteGame');
 });
 
 require __DIR__.'/auth.php';
