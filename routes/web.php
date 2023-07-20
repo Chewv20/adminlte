@@ -66,6 +66,8 @@ Route::middleware('auth')->group(function () {
         return view('grafica');
     });
 
+    Route::post('/games/get',[GamesController::class,'all']);
+
 });
 
 require __DIR__.'/auth.php';

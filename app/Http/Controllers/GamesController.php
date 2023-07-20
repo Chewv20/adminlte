@@ -76,4 +76,9 @@ class GamesController extends Controller
         return redirect()-> route('games');
     }
 
+    public function all(){
+        $videogames = Videogame::all();
+        return $videogames;
+    }
+
 }

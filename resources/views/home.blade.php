@@ -13,12 +13,6 @@
             <div class="card">
                 <div class="card-header">Dashboard</div>
 
-                <div class="card-body">
-
-                    <h1>{{ $chart->options['chart_title'] }}</h1>
-                    {!! $chart->renderHtml() !!}
-
-                </div>
 
             </div>
         </div>
@@ -26,7 +20,3 @@
 </div>
 @endsection
 
-@section('scripts')
-{!! $chart->renderChartJsLibrary() !!}
-{!! $chart->renderJs() !!}
-@endsection
