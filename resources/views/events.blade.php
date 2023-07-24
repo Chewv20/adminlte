@@ -10,7 +10,7 @@
 
 <div class="card">
     <div class="card-body">
-        <x-adminlte-datatable id="table1" :heads="$heads" striped head-theme='dark' with-buttons scrollable>
+        <x-adminlte-datatable id="table2" :heads="$heads" striped head-theme='dark' with-buttons scrollable>
         @foreach($events as $event)
             <tr>
                 <td>{{$event->id}} </td>

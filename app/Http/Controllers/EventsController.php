@@ -14,7 +14,7 @@ class EventsController extends Controller
     {
         //
         $event=Event::all();   
-        dd($event);
+        return view('events');
     }
 
     /**

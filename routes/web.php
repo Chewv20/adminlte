@@ -66,7 +66,7 @@ Route::middleware('auth')->group(function () {
         return view('grafica');
     });
 
-    Route::post('/games/get',[GamesController::class,'all']);
+    Route::get('/games/get',[GamesController::class,'get_category'])->name('data');
 
 });
 

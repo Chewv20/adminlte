@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use App\Models\Videogame;
 use App\Models\Category;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 
 class GamesController extends Controller
@@ -78,7 +79,57 @@ class GamesController extends Controller
 
     public function all(){
         $videogames = Videogame::all();
-        return $videogames;
+        $label=[];
+        $dat=[];
+        foreach($videogames as $game){
+            $label[]= $game->name;
+            $dat[]= $game->category_id;
+        }
+        $data = [
+            'label'=> $label,
+            'data' => $dat
+        ]; 
+        return response()->json($data,200);
     }
+
+    public function get_category(){
+
+        $data = [];
+
+        $category1 = DB::table('videogames')
+        ->where('category_id',1)
+        ->count();
+
+        $category2 = DB::table('videogames')
+        ->where('category_id',2)
+        ->count();
+
+        $category3 = DB::table('videogames')
+        ->where('category_id',3)
+        ->count();
+
+        $category4 = DB::table('videogames')
+        ->where('category_id',4)
+        ->count();
+
+        $label = [];
+        $dat = [];
+        for($i=0;$i<4;$i++){
+            $label[$i] = "Categoria ".$i+1; 
+        }
+        $dat[0] = $category1;
+        $dat[1] = $category2;
+        $dat[2] = $category3;
+        $dat[3] = $category4;
+
+        $data = [
+            'label'=> $label,
+            'data' => $dat
+        ];
+
+        return response()->json($data,200);
+    }
+
+    
 
 }
